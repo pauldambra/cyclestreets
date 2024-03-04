@@ -21,6 +21,8 @@ dependencies {
   api "org.osmdroid:osmdroid-android:${rootProject.ext.osmdroidVersion}"
   api 'org.slf4j:slf4j-android:1.7.30'
 
+  implementation("com.posthog:posthog-android:3.+")
+
   // Retrofit for HTTP Client activities
   api 'com.squareup.retrofit2:retrofit:2.9.0'
   implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'

@@ -16,9 +16,9 @@ class HttpLoggingInterceptor : Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val url = request.url().toString().replace(API_KEY_REGEX, "key=redacted")
+        val url = request.url.toString().replace(API_KEY_REGEX, "key=redacted")
 
-        Log.d(TAG, "Sending request: $url with headers: ${request.headers()}")
+        Log.d(TAG, "Sending request: $url with headers: ${request.headers}")
         val response = chain.proceed(request)
 
         Log.d(TAG, "Received ${StatusLine.get(response)} response for: $url")
